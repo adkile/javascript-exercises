@@ -1,14 +1,16 @@
 const removeFromArray = function (arr, ...valuesToRemove) {
-  for (let i = 0; i < arr.length - 1; i++) {
-    if (valuesToRemove.includes(arr[i])) {
-      arr.splice(arr[i], 1);
-      i--;
-    }
+  for (let i = 0; i < 5; i++) {
+    arr.map((item, index) => {
+      if (valuesToRemove.includes(item)) {
+        arr.splice(index, 1);
+      }
+    });
   }
   return arr;
 };
 
-console.log(removeFromArray([1, 2, 3, 4], 1, 2, 3, 4));
-
+console.log(
+  removeFromArray([1, 3, 9, 18, 55, 34, 98, 5], 1, 3, 9, 18, 55, 34, 98, 5)
+);
 // Do not edit below this line
 module.exports = removeFromArray;
